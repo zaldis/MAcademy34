@@ -14,6 +14,7 @@ def lesson_5():
     print("This is new line \n")
     """
 
+    import pdb; pdb.set_trace()
     age = 15
     print('I am %d years old' % age)
     print('I am %f years old' % age)
@@ -32,16 +33,19 @@ def lesson_5():
     print(f'I am {age:f} years old')
 
 
+def find_vowels():
+    line = input('Enter your line: ').lower()
+    vowel_letters = 0
 
-line = input('Enter your line: ').lower()
-vowel_letters = 0
+    'a, e, i, o, u, y'
+    vowel_letters += line.count('a')
+    vowel_letters += line.count('e')
+    vowel_letters += line.count('i')
+    vowel_letters += line.count('o')
+    vowel_letters += line.count('u')
+    vowel_letters += line.count('y')
 
-'a, e, i, o, u, y'
-vowel_letters += line.count('a')
-vowel_letters += line.count('e')
-vowel_letters += line.count('i')
-vowel_letters += line.count('o')
-vowel_letters += line.count('u')
-vowel_letters += line.count('y')
+    print('The count of the vowel letters:', vowel_letters)
 
-print('The count of the vowel letters:', vowel_letters)
+
+lesson_5()
