@@ -14,7 +14,6 @@ def lesson_5():
     print("This is new line \n")
     """
 
-    import pdb; pdb.set_trace()
     age = 15
     print('I am %d years old' % age)
     print('I am %f years old' % age)
