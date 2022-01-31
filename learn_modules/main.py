@@ -1,42 +1,40 @@
-# import ceaser.settings
-# print(ceaser.settings.ALPHABET, ceaser.settings.SHIFT)
-
-# from ceaser import settings as s
-# print(s.ALPHABET, s.SHIFT)
-
-# from ceaser.settings import ALPHABET, SHIFT
-# print(ALPHABET, SHIFT)
-
-
-# from ceaser import settings
-# print(settings.ALPHABET, settings.SHIFT)
-
-
+import os
 from ceaser import encrypt
 
 
 def run():
     answer = input('Encrypt/Decrypt: ')
-
     if answer == 'Encrypt':
-        file = open('data/source.txt', 'r')
-        lines = file.readlines()
-        file.close()
-
-        encrypted_lines = []
-        for line in lines:
-            encrypted_line = encrypt.ceaser_encrypt(line)
-            encrypted_lines.append(encrypted_line)
-        
-        # file = open('data/encrypted.txt', 'w')
-        # file.writelines(encrypted_lines)
-        # file.close()
-
-        with open('data/encrypted.txt', 'w') as file:
-            file.writelines(encrypted_lines)
-
+        _handle_encrypt()
     elif answer == 'Decrypt':
-        pass
+        _handle_decrypt()
+
+
+def _handle_encrypt():
+    with open('data/source.txt', 'r') as file:
+        lines = file.readlines()
+
+    encrypted_lines = []
+    for line in lines:
+        encrypted_line = encrypt.ceaser_encrypt(line)
+        encrypted_lines.append(encrypted_line)
+
+    with open('data/encrypted.txt', 'w') as file:
+        file.writelines(encrypted_lines)
+
+
+def _handle_decrypt():
+    lines = []
+    with open('data/encrypted.txt', 'r') as file:
+        lines = file.readlines()
+
+    decrypted_lines = []
+    for line in lines:
+        decrypted_line = encrypt.ceaser_decrypt(line)
+        decrypted_lines.append(decrypted_line)
+
+    with open('data/decrypted.txt', 'w') as file:
+        file.writelines(decrypted_lines)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,52 @@
+
+def say_hello(name: str = 'Anonym') -> None:
+    print('Hey,', name)
+
+
+def my_func(*pos_params, a, b, c, d, ):
+    print('a = ', a)
+    print('b = ', b)
+    print('c = ', c)
+    print('d = ', d)
+    print('pos = ', pos_params)
+
+my_func(1, 2, 3, 4, 5, 56, 6, b=1, a=2, d=3, c=4, )
+
+
+def my_func2(*args, **kwargs):
+    print('*args ', args)
+    print('**kwargs', kwargs)
+
+
+my_func2(1, 2, 3, 4, 5, {1, 2, 3}, [12,3, 4], name='Denys', age=22, city='Kharkiv', languages=['English', 'UK'])
+
+
+def my_func3(a, b, *, name1, name2):
+    pass
+
+my_func3(1, 2, name2=3, name1=4)
+
+say_hello(name='Antony')
+
+# print('Hello, Misha')
+# print('Hello, Slavik')
+# print('Hello, Illa')
+
+# say_hello('Misha')
+# say_hello('Slavik')
+# say_hello('Illa')
+
+def multiply(a: int, b: int) -> int:
+    res = a * b
+    print(res)
+    return res, 4, 5
+    # return None
+
+print(multiply(5, 6))
+print(multiply(-5, 60))
+
+
+
+def my_print(...):
+    ...
+
