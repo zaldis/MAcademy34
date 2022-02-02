@@ -46,7 +46,26 @@ print(multiply(5, 6))
 print(multiply(-5, 60))
 
 
+# def my_print(*values, sep=' ', end='\n'):
+#     value_ls = list(str(val) for val in values)
+#     out = sep.join(value_ls)
+#     return f'{out}{end}'
+    
+# out = my_print(1, 2, 3, 4, sep='<>', end='\n\n\n')
+# out = my_print([1,2,2,3,34])
+# out = my_print('abc')
 
-def my_print(...):
-    ...
+
+def is_even(number):
+    return number % 2 == 0
+
+
+numbers = list(range(100))
+# evens = list(filter(is_even, numbers))
+evens = list(filter(
+    lambda number: number % 2 == 0,
+    numbers
+))
+print(evens)
+    
 
